@@ -1,4 +1,7 @@
 # Video-Game-Database
+
+Danh Nguyen, Meagan Olsen, Jonathan Rohr, Joshua Bell
+
 Instructions to run:
 - In /univ_web_app run `npm install`
 - Then run `node main.js [some random port number]`
