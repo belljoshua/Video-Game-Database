@@ -42,7 +42,6 @@ module.exports = function(){
     function getGameWithNameLike(req, res, mysql, context, complete) {
       //sanitize the input as well as include the % character
        var query = "SELECT Title FROM General WHERE Title LIKE " + mysql.pool.escape(req.params.s + '%');
-      console.log(query)
 
       mysql.pool.query(query, function(error, results, fields){
             if(error){

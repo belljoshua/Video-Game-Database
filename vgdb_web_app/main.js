@@ -16,13 +16,7 @@ app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 app.set('mysql', mysql);
-app.use('/people_certs', require('./people_certs.js'));
 app.use('/games', require('./games.js'));
-app.use('/professor', require('./professor.js'));
-app.use('/class', require('./class.js'));
-app.use('/building', require('./building.js'));
-app.use('/enroll', require('./enroll.js'));
-app.use('/taking', require('./taking.js'));
 app.use('/test', require('./test.js'));
 app.use('/', express.static('public'));
 
