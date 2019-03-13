@@ -5,26 +5,35 @@
 
 <h2>Search</h2>
 
+<select name="tablelist" form="search_games">
+  <option value="General">Games</option>
+  <option value="Releases">Releases</option>
+  <option value="Ratings">Ratings</option>
+  <option value="Genres">Genres</option>
+  <option value="Developers">Developers</option>
+  <option value="Publishers">Publishers</option>
+</select>
 <form id="search_games" action="" method="">
-    <input id="game_search" type="text" placeholder="Enter First Name" name="game_search">
+    <input id="game_search" type="text" placeholder="Enter Search..." name="game_search">
+
     <input type="button" value="Search" onclick="searchGames()">
 </form>
 
 <br>
 
 <table style="border: 1px solid black">
-    <thead> 
+    <thead>
         <tr style="border: 1px solid black">
             <th style="border: 1px solid black">Title</th>
         </tr>
-    </thead> 
+    </thead>
     <tbody>
-        {{#each game}} 
-        <tr style="border: 1px solid black"> 
+        {{#each game}}
+        <tr style="border: 1px solid black">
             <td style="border: 1px solid black">{{Title}}</td>
-        </tr> 
-        {{/each}} 
-    </tbody> 
+        </tr>
+        {{/each}}
+    </tbody>
 </table>
 
 {{!-- <h2>Add student:</h2>
@@ -45,5 +54,5 @@
 <input type="text" placeholder="New Name" name="name">
 <button onclick="updateStudent()">Change</button>
 </form> --}}
- 
+
 </html>
