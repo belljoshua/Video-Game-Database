@@ -11,6 +11,11 @@ a {
 
 header{
   box-shadow: 0px 8px 20px 0px #000;
+  margin-bottom: 30px;
+}
+
+.bodydiv{
+  margin: 50px;
 }
 
 .logs{
@@ -57,6 +62,7 @@ header{
   overflow: hidden;
   background-color: #57b50c;
   background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  margin-left: 50px;
 }
 
 .topnav a:not(.icon){
@@ -83,7 +89,7 @@ header{
   color: #ffffff;
 }
 
-@media screen and (max-width: 1125px) {
+/* @media screen and (max-width: 1125px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -112,7 +118,7 @@ header{
     text-align: center;
     margin-left: -35px;
   }
-}
+} */
 
 /*.navlist {
   margin: 0 0 0 0px;

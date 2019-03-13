@@ -1,0 +1,57 @@
+<html>
+  <div class="bodydiv">
+    <form id="search_ratings" action="" method="" onsubmit="return false">
+        <input id="rating_search" type="text" placeholder="Enter Search..." name="rating_search">
+        <select id="ratinglist" name="ratinglist" form="search_ratings">
+          <option value="all">All</option>
+          <option value="title">Title</option>
+          <option value="website">Website</option>
+          <option value="platform">Platform</option>
+          <option value="rating">Rating</option>
+        </select>
+        <input type="submit" value="Search" onclick="searchRatings()">
+    </form>
+
+    <br>
+
+    <table style="border: 1px solid black">
+        <thead>
+            <tr style="border: 1px solid black">
+                <th style="border: 1px solid black">Title</th>
+                <th style="border: 1px solid black">Website</th>
+                <th style="border: 1px solid black">Platform</th>
+                <th style="border: 1px solid black">Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each game}}
+            <tr style="border: 1px solid black">
+                <td style="border: 1px solid black">{{Title}}</td>
+                <td style="border: 1px solid black">{{Website}}</td>
+                <td style="border: 1px solid black">{{Platform}}</td>
+                <td style="border: 1px solid black">{{Rating}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    {{!-- <h2>Add student:</h2>
+    <form id="addperson" action="/student" method="post">
+        <input type="text" placeholder="student Full Name" name="name">
+        <input type="submit" value="Submit">
+     </form>
+    <br/> --}}
+
+    {{!-- <h2>Change Student Name</h2>
+    <form id="change_student">
+    <select id="student_to_change">
+        {{#each student}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    <input type="text" placeholder="New Name" name="name">
+    <button onclick="updateStudent()">Change</button>
+    </form> --}}
+  </div>
+</html>

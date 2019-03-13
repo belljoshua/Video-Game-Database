@@ -13,22 +13,8 @@ module.exports = function(){
         });
     }
 
-    function getGame(res, mysql, context, complete){
-        mysql.pool.query("SELECT Title FROM General", function(error, results, fields){
-            if(error){
-                res.write(JSON.stringify(error));
-                res.end();
-            }
-            context.game = results;
-            complete();
-        });
-    }
-
-    function getGamebyName(req, res, mysql, context, complete){
-      var query = "SELECT Title FROM General WHERE name = ?";
-      console.log(req.params)
-      var inserts = [req.params.name]
-      mysql.pool.query(query, inserts, function(error, results, fields){
+    function getGames(res, mysql, context, complete){
+        mysql.pool.query("SELECT General.Title FROM General ORDER BY Title ASC", function(error, results, fields){
             if(error){
                 res.write(JSON.stringify(error));
                 res.end();
@@ -41,7 +27,7 @@ module.exports = function(){
     /* Find game whose name starts with a given string in the req */
     function getGameWithNameLike(req, res, mysql, context, complete) {
       //sanitize the input as well as include the % character
-       var query = "SELECT Title FROM General WHERE Title LIKE " + mysql.pool.escape(req.params.s + '%');
+       var query = "SELECT General.Title FROM General WHERE Title LIKE " + mysql.pool.escape(req.params.s + '%');
 
       mysql.pool.query(query, function(error, results, fields){
             if(error){
@@ -52,7 +38,7 @@ module.exports = function(){
             complete();
         });
     }
-     
+
     function getPerson(res, mysql, context, id, complete){
         var sql = "SELECT character_id as id, fname, lname, homeworld, age FROM bsg_student WHERE character_id = ?";
         var inserts = [id];
@@ -73,13 +59,13 @@ module.exports = function(){
         var context = {};
         context.jsscripts = ["deleteperson.js","filterstudent.js","searchgames.js", "updateperson.js"];
         var mysql = req.app.get('mysql');
-        getGame(res, mysql, context, complete);
+        getGames(res, mysql, context, complete);
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){
                 res.render('games', context);
             }
- 
+
         }
     });
 

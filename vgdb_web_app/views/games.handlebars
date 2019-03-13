@@ -1,58 +1,45 @@
 <html>
-<a href="/">Home</a>
+  <div class="bodydiv">
+    <form id="search_games" action="" method="" onsubmit="return false">
+        <input id="game_search" type="text" placeholder="Enter Game Title..." name="game_search">
 
-<h1>Games</h1>
+        <input type="submit" value="Search" onclick="searchGames()">
+    </form>
 
-<h2>Search</h2>
+    <br>
 
-<select name="tablelist" form="search_games">
-  <option value="General">Games</option>
-  <option value="Releases">Releases</option>
-  <option value="Ratings">Ratings</option>
-  <option value="Genres">Genres</option>
-  <option value="Developers">Developers</option>
-  <option value="Publishers">Publishers</option>
-</select>
-<form id="search_games" action="" method="">
-    <input id="game_search" type="text" placeholder="Enter Search..." name="game_search">
+    <table id="gamestable" style="border: 1px solid black">
+        <thead>
+            <tr style="border: 1px solid black">
+                <th style="border: 1px solid black">Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each game}}
+            <tr style="border: 1px solid black">
+                <td style="border: 1px solid black">{{Title}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 
-    <input type="button" value="Search" onclick="searchGames()">
-</form>
+    {{!-- <h2>Add student:</h2>
+    <form id="addperson" action="/student" method="post">
+        <input type="text" placeholder="student Full Name" name="name">
+        <input type="submit" value="Submit">
+     </form>
+    <br/> --}}
 
-<br>
-
-<table style="border: 1px solid black">
-    <thead>
-        <tr style="border: 1px solid black">
-            <th style="border: 1px solid black">Title</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each game}}
-        <tr style="border: 1px solid black">
-            <td style="border: 1px solid black">{{Title}}</td>
-        </tr>
+    {{!-- <h2>Change Student Name</h2>
+    <form id="change_student">
+    <select id="student_to_change">
+        {{#each student}}
+        <option value="{{id}}">{{name}}</option>
         {{/each}}
-    </tbody>
-</table>
+    </select>
 
-{{!-- <h2>Add student:</h2>
-<form id="addperson" action="/student" method="post">
-    <input type="text" placeholder="student Full Name" name="name">
-    <input type="submit" value="Submit">
- </form>
-<br/> --}}
-
-{{!-- <h2>Change Student Name</h2>
-<form id="change_student">
-<select id="student_to_change">
-    {{#each student}}
-    <option value="{{id}}">{{name}}</option>
-    {{/each}}
-</select>
-
-<input type="text" placeholder="New Name" name="name">
-<button onclick="updateStudent()">Change</button>
-</form> --}}
-
+    <input type="text" placeholder="New Name" name="name">
+    <button onclick="updateStudent()">Change</button>
+    </form> --}}
+  </div>
 </html>
