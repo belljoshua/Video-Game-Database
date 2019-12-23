@@ -26,3 +26,4 @@ You can use the games.sql to view the database. (Can be imported into phpMyAdmin
 The database credientials can be changed in the dbcon.js file. This is so you can import the games.sql file to your personal phpMyAdmin account and change the credientials so that the site still functions once our accounts close at the end of the term.
 
 The web app is currently connected to Jonathan's phpMyAdmin database.
+
